@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Дек 11 2024 г., 17:38
+-- Время создания: Дек 15 2024 г., 15:48
 -- Версия сервера: 5.7.24
 -- Версия PHP: 8.3.1
 
@@ -55,22 +55,6 @@ CREATE TABLE `first_work` (
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `messages`
---
-
-CREATE TABLE `messages` (
-  `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `message` text NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `browser_info` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Структура таблицы `requests`
 --
 
@@ -81,14 +65,6 @@ CREATE TABLE `requests` (
   `product` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `requests`
---
-
-INSERT INTO `requests` (`id`, `username`, `contact`, `product`, `created_at`) VALUES
-(1, 'Виолетта', '88005553535', 'Платье черное мини', '2024-12-11 17:26:14'),
-(2, 'Даниил', '88005553535', 'Свадебный костюм черный', '2024-12-11 17:31:09');
 
 --
 -- Индексы сохранённых таблиц
@@ -105,12 +81,6 @@ ALTER TABLE `admin`
 -- Индексы таблицы `first_work`
 --
 ALTER TABLE `first_work`
-  ADD PRIMARY KEY (`id`);
-
---
--- Индексы таблицы `messages`
---
-ALTER TABLE `messages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -136,16 +106,10 @@ ALTER TABLE `first_work`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблицы `messages`
---
-ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT для таблицы `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
